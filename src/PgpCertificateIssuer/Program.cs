@@ -443,16 +443,47 @@ namespace PgpCertificateIssuer
 
                 // Generate public key ring, dump to file.
                 PgpPublicKeyRing pkr = krgen.GeneratePublicKeyRing();
-                BufferedStream pubout = new BufferedStream(new FileStream(pubring, System.IO.FileMode.Create));
-                pkr.Encode(pubout);
-                pubout.Close();
+
+                bool armorPublic = true;
+
+                if (armorPublic)
+                {
+                    using (ArmoredOutputStream pubout = new ArmoredOutputStream(new FileStream(pubring, System.IO.FileMode.Create)))
+                    {
+                        pkr.Encode(pubout);
+                        pubout.Close();
+                    }
+                }
+                else
+                {
+                    using (BufferedStream pubout = new BufferedStream(new FileStream(pubring, System.IO.FileMode.Create)))
+                    {
+                        pkr.Encode(pubout);
+                        pubout.Close();
+                    }
+                }
+
+                bool armorPrivate = false;
 
                 // Generate private key, dump to file.
                 PgpSecretKeyRing skr = krgen.GenerateSecretKeyRing();
-                BufferedStream secout = new BufferedStream(new FileStream(secring, System.IO.FileMode.Create));
-                skr.Encode(secout);
-                secout.Close();
-
+ 
+                if (armorPrivate)
+                {
+                    using (ArmoredOutputStream secout = new ArmoredOutputStream(new FileStream(secring, System.IO.FileMode.Create)))
+                    {
+                        skr.Encode(secout);
+                        secout.Close();
+                    }
+                }
+                else
+                {
+                    using (BufferedStream secout = new BufferedStream(new FileStream(secring, System.IO.FileMode.Create)))
+                    {
+                        skr.Encode(secout);
+                        secout.Close();
+                    }
+                }
                 Console.WriteLine();
                 Console.WriteLine("PGP key pairs successfully generated.");
                 Console.WriteLine();

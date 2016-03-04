@@ -3764,6 +3764,7 @@
 		<row><td>ID_STRING2</td><td>1033</td><td>CompliaShield</td><td>0</td><td/><td>824481294</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>CompliaShield Certificate Issuer</td><td>0</td><td/><td>430236370</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>CompliaShield PGP Certificate Issuer</td><td>0</td><td/><td>430238418</td></row>
+		<row><td>ID_STRING5</td><td>1033</td><td>https://compliashield.com</td><td>0</td><td/><td>564452586</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>1503856781</td></row>
 	</table>
 
@@ -4322,6 +4323,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L0">Value</col>
 		<col def="S255">ISComments</col>
 		<row><td>ALLUSERS</td><td>1</td><td/></row>
+		<row><td>ARPHELPLINK</td><td>##ID_STRING5##</td><td/></row>
 		<row><td>ARPINSTALLLOCATION</td><td/><td/></row>
 		<row><td>ARPPRODUCTICON</td><td>ARPPRODUCTICON.exe</td><td/></row>
 		<row><td>ARPSIZE</td><td/><td/></row>
@@ -4391,9 +4393,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]JFM.Certificates.IssuerConsole.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{5047FC97-7CCA-4AE5-852D-5BB9DC537650}</td><td/></row>
+		<row><td>ProductCode</td><td>{55295FC3-01B9-4D32-9C2E-E0F166C4A0CD}</td><td/></row>
 		<row><td>ProductName</td><td>CompliaShield Certificate Issuer</td><td/></row>
-		<row><td>ProductVersion</td><td>1.4.0.5</td><td/></row>
+		<row><td>ProductVersion</td><td>1.4.0.6</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>

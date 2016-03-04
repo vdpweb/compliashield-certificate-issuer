@@ -11,6 +11,8 @@ CertificateIssuerUnitTests/
 *.userosscache
 *.sln.docstates
 
+UnitTestProject1/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
