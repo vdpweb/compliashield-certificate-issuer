@@ -34,5 +34,9 @@
 			<Name>CertificateIssuer</Name>
 			<Project>{00F5D4EF-1C8A-4434-9A19-1E5452C7826E}</Project>
 		</ProjectReference>
+		<ProjectReference Include="..\PgpCertificateIssuer\PgpCertificateIssuer.csproj">
+			<Name>PgpCertificateIssuer</Name>
+			<Project>{EEC880FF-2D0F-4B5B-B0BD-6E06EFEAD566}</Project>
+		</ProjectReference>
 	</ItemGroup>
 </Project>

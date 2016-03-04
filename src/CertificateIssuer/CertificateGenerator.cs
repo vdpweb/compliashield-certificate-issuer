@@ -272,53 +272,7 @@ namespace CompliaShield.CertificateIssuer.ConsoleApp
             pkcs12Data = x509.Export(System.Security.Cryptography.X509Certificates.X509ContentType.Pfx, password);
 
         }
-
-        private byte[] z_dep_gen()
-        {
-            TextReader textReader = new StreamReader("certificaterequest.pkcs10");
-            PemReader pemReader = new PemReader(textReader);
-
-            Pkcs10CertificationRequest certificationRequest = (Pkcs10CertificationRequest)pemReader.ReadObject();
-            CertificationRequestInfo certificationRequestInfo = certificationRequest.GetCertificationRequestInfo();
-            SubjectPublicKeyInfo publicKeyInfo = certificationRequestInfo.SubjectPublicKeyInfo;
-
-            RsaPublicKeyStructure publicKeyStructure = RsaPublicKeyStructure.GetInstance(publicKeyInfo.GetPublicKey());
-
-            RsaKeyParameters publicKey = new RsaKeyParameters(false, publicKeyStructure.Modulus, publicKeyStructure.PublicExponent);
-
-            bool certIsOK = certificationRequest.Verify(publicKey);
-            // public key is OK here...
-
-            // get the server certificate
-            Org.BouncyCastle.X509.X509Certificate serverCertificate = DotNetUtilities.FromX509Certificate(System.Security.Cryptography.X509Certificates.X509Certificate.CreateFromCertFile("servermastercertificate.cer"));
-
-            // get the server private key
-            byte[] privateKeyBytes = File.ReadAllBytes("serverprivate.key");
-
-            AsymmetricKeyParameter serverPrivateKey = PrivateKeyFactory.CreateKey(privateKeyBytes);
-
-            // generate the client certificate
-            X509V3CertificateGenerator generator = new X509V3CertificateGenerator();
-
-            generator.SetSerialNumber(BigInteger.ProbablePrime(120, new Random()));
-            generator.SetIssuerDN(serverCertificate.SubjectDN);
-            generator.SetNotBefore(DateTime.Now.AddHours(-2));
-            generator.SetNotAfter(DateTime.Now.AddYears(5));
-            generator.SetSubjectDN(certificationRequestInfo.Subject);
-            generator.SetPublicKey(publicKey);
-            generator.SetSignatureAlgorithm("SHA512withRSA");
-            generator.AddExtension(X509Extensions.AuthorityKeyIdentifier, false, new AuthorityKeyIdentifierStructure(serverCertificate));
-            generator.AddExtension(X509Extensions.SubjectKeyIdentifier, false, new SubjectKeyIdentifierStructure(publicKey));
-
-            var newClientCert = generator.Generate(serverPrivateKey);
-
-            newClientCert.Verify(publicKey); // <-- this blows up
-
-            return DotNetUtilities.ToX509Certificate(newClientCert).Export(System.Security.Cryptography.X509Certificates.X509ContentType.Pkcs12, "user password");
-
-        }
-
-
+        
         public static AsymmetricAlgorithm ToDotNetKey(RsaPrivateCrtKeyParameters privateKey)
         {
             var cspParams = new CspParameters
@@ -396,33 +350,9 @@ namespace CompliaShield.CertificateIssuer.ConsoleApp
             privateKey = TransformRSAPrivateKey(x5092.PrivateKey);
             return cert;
         }
-
-        ///// <summary>
-        ///// Export a certificate to a PEM format string
-        ///// </summary>
-        ///// <param name="cert">The certificate to export</param>
-        ///// <returns>A PEM encoded string</returns>
-        //public static string ExportToPEM(System.Security.Cryptography.X509Certificates.X509Certificate cert)
-        //{
-        //    StringBuilder builder = new StringBuilder();
-
-        //    builder.AppendLine("-----BEGIN CERTIFICATE-----");
-
-        //    var bytes = cert.Export(System.Security.Cryptography.X509Certificates.X509ContentType.Cert);
-        //    //var str = GetString(bytes);
-        //    //builder.AppendLine(str);
-        //    builder.AppendLine(Convert.ToBase64String(bytes, Base64FormattingOptions.InsertLineBreaks));
-        //    builder.AppendLine("-----END CERTIFICATE-----");
-
-        //    return builder.ToString();
-        //}
-
-
+        
     }
-
-
-
-
+    
     public class StringWriterWithEncoding : StringWriter
     {
         public StringWriterWithEncoding(StringBuilder sb, Encoding encoding)

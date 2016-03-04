@@ -342,6 +342,7 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>CertificateIssuer.Primary_output</td><td>{B7B215A2-5B6D-4963-AB26-DAED9C98DEEE}</td><td>INSTALLDIR</td><td>2</td><td/><td>certificateissuer.primary_ou</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PgpCertificateIssuer.Primary_output</td><td>{6BC34110-38C2-4CCD-AA15-9DC469C0C0EC}</td><td>INSTALLDIR</td><td>2</td><td/><td>pgpcertificateissuer.primary</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -552,7 +553,7 @@
 		<row><td>LicenseAgreement</td><td>DlgLine</td><td>Line</td><td>48</td><td>234</td><td>326</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>LicenseAgreement</td><td>DlgTitle</td><td>Text</td><td>13</td><td>6</td><td>292</td><td>25</td><td>65539</td><td/><td>##IDS__IsLicenseDlg_LicenseAgreement##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>LicenseAgreement</td><td>ISPrintButton</td><td>PushButton</td><td>301</td><td>188</td><td>65</td><td>17</td><td>3</td><td/><td>##IDS_PRINT_BUTTON##</td><td>Agree</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>LicenseAgreement</td><td>Memo</td><td>ScrollableText</td><td>8</td><td>55</td><td>358</td><td>130</td><td>7</td><td/><td/><td/><td/><td>0</td><td/><td>&lt;ISProductFolder&gt;\Redist\0409\Eula.rtf</td><td/></row>
+		<row><td>LicenseAgreement</td><td>Memo</td><td>ScrollableText</td><td>8</td><td>55</td><td>358</td><td>130</td><td>7</td><td/><td/><td/><td/><td>0</td><td/><td>C:\_Git\_Lib_Current\apache-2.0-license-compliashield.rtf</td><td/></row>
 		<row><td>LicenseAgreement</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceType</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceType</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary1</td></row>
@@ -921,7 +922,7 @@
 		<row><td>DatabaseFolder</td><td>ChangeFolder</td><td>SpawnDialog</td><td>InstallChangeFolder</td><td>1</td><td>1</td></row>
 		<row><td>DatabaseFolder</td><td>ChangeFolder</td><td>[_BrowseProperty]</td><td>DATABASEDIR</td><td>1</td><td>2</td></row>
 		<row><td>DatabaseFolder</td><td>Next</td><td>NewDialog</td><td>SetupType</td><td>1</td><td>1</td></row>
-		<row><td>DestinationFolder</td><td>Back</td><td>NewDialog</td><td>InstallWelcome</td><td>NOT Installed</td><td>0</td></row>
+		<row><td>DestinationFolder</td><td>Back</td><td>NewDialog</td><td>LicenseAgreement</td><td>NOT Installed</td><td>0</td></row>
 		<row><td>DestinationFolder</td><td>Cancel</td><td>SpawnDialog</td><td>CancelSetup</td><td>1</td><td>1</td></row>
 		<row><td>DestinationFolder</td><td>ChangeFolder</td><td>SpawnDialog</td><td>InstallChangeFolder</td><td>1</td><td>1</td></row>
 		<row><td>DestinationFolder</td><td>ChangeFolder</td><td>[_BrowseProperty]</td><td>INSTALLDIR</td><td>1</td><td>2</td></row>
@@ -938,7 +939,7 @@
 		<row><td>InstallChangeFolder</td><td>Up</td><td>DirectoryListUp</td><td>0</td><td>1</td><td>0</td></row>
 		<row><td>InstallWelcome</td><td>Back</td><td>NewDialog</td><td>SplashBitmap</td><td>Display_IsBitmapDlg</td><td>0</td></row>
 		<row><td>InstallWelcome</td><td>Cancel</td><td>SpawnDialog</td><td>CancelSetup</td><td>1</td><td>0</td></row>
-		<row><td>InstallWelcome</td><td>Next</td><td>NewDialog</td><td>DestinationFolder</td><td>1</td><td>0</td></row>
+		<row><td>InstallWelcome</td><td>Next</td><td>NewDialog</td><td>LicenseAgreement</td><td>1</td><td>0</td></row>
 		<row><td>LicenseAgreement</td><td>Back</td><td>NewDialog</td><td>InstallWelcome</td><td>NOT Installed</td><td>0</td></row>
 		<row><td>LicenseAgreement</td><td>Cancel</td><td>SpawnDialog</td><td>CancelSetup</td><td>1</td><td>0</td></row>
 		<row><td>LicenseAgreement</td><td>ISPrintButton</td><td>DoAction</td><td>ISPrint</td><td>1</td><td>0</td></row>
@@ -1052,6 +1053,7 @@
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>INSTALLDIR</td><td>CertificateIssuer.Primary_output</td></row>
+		<row><td>INSTALLDIR</td><td>PgpCertificateIssuer.Primary_output</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1067,6 +1069,7 @@
 		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
 		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
+		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>LaunchProgramFileFromSetupCompleteSuccess</td><td>1</td><td>NewBinary19</td><td>LaunchProgram</td><td/><td/></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
@@ -1177,6 +1180,8 @@
 		<row><td>WindowsFolder</td><td>TARGETDIR</td><td>.:Windows</td><td/><td>0</td><td/></row>
 		<row><td>WindowsVolume</td><td>TARGETDIR</td><td>.:WinRoot</td><td/><td>0</td><td/></row>
 		<row><td>certif_1_certificate_generator</td><td>jfmcon_1_jfm_concepts</td><td>CERTIF~1|Certificate Generator</td><td/><td>1</td><td/></row>
+		<row><td>compli_1_compliashield</td><td>ProgramMenuFolder</td><td>COMPLI~1|CompliaShield</td><td/><td>1</td><td/></row>
+		<row><td>compli_1_compliashield_certificate_issuer</td><td>compli_1_compliashield</td><td>COMPLI~1|CompliaShield Certificate Issuer</td><td/><td>1</td><td/></row>
 		<row><td>jfmcon_1_jfm_concepts</td><td>ProgramMenuFolder</td><td>JFMCON~1|JFM Concepts</td><td/><td>1</td><td/></row>
 	</table>
 
@@ -1870,6 +1875,7 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>CertificateIssuer.Primary_output</td></row>
+		<row><td>AlwaysInstall</td><td>PgpCertificateIssuer.Primary_output</td></row>
 	</table>
 
 	<table name="File">
@@ -1885,6 +1891,7 @@
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>certificateissuer.primary_ou</td><td>CertificateIssuer.Primary_output</td><td>CertificateIssuer.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;CertificateIssuer1&gt;|Built</td><td>3</td><td/></row>
+		<row><td>pgpcertificateissuer.primary</td><td>PgpCertificateIssuer.Primary_output</td><td>PgpCertificateIssuer.Primary output</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;PgpCertificateIssuer&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -1903,6 +1910,7 @@
 		<row><td>PROJECT_ASSISTANT_DEFAULT_FEATURE</td><td>AlwaysInstall</td></row>
 		<row><td>PROJECT_ASSISTANT_FEATURES</td><td>NonSelectable</td></row>
 		<row><td>_Built</td><td/></row>
+		<row><td>_Built1</td><td/></row>
 	</table>
 
 	<table name="ISBillBoard">
@@ -2030,6 +2038,7 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>CertificateIssuer.Primary_output</td><td/><td/><td>_1FC0C258_DD12_4490_8328_DB53A2922741_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PgpCertificateIssuer.Primary_output</td><td/><td/><td>_600DBA1B_756A_4CE2_9A4D_E17008055B5F_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2339,6 +2348,7 @@
 		<row><td>ISProjectDataFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectFolder</td><td/><td/><td>1</td></row>
 		<row><td>JFM.Certificates.IssuerConsole</td><td>JFM.Certificates.IssuerConsole\JFM.Certificates.IssuerConsole.csproj</td><td/><td>2</td></row>
+		<row><td>PgpCertificateIssuer</td><td>PgpCertificateIssuer\PgpCertificateIssuer.csproj</td><td/><td>2</td></row>
 		<row><td>ProgramFilesFolder</td><td/><td/><td>1</td></row>
 		<row><td>SystemFolder</td><td/><td/><td>1</td></row>
 		<row><td>WindowsFolder</td><td/><td/><td>1</td></row>
@@ -3459,6 +3469,9 @@
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1033</td><td>This setup works until %s. The setup will now exit.</td><td>0</td><td/><td>1503856781</td></row>
 		<row><td>IDS_SETUPEXE_LAUNCH_COND_E</td><td>1033</td><td>This setup was built with an evaluation version of InstallShield and can only be launched from setup.exe.</td><td>0</td><td/><td>1503856781</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>JFM Concepts Certificate Generator</td><td>0</td><td/><td>1503865741</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>430211762</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME3</td><td>1033</td><td>CompliaShield Certificate Issuer</td><td>0</td><td/><td>430181074</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME4</td><td>1033</td><td>CompliaShield PGP Certificate Issuer</td><td>0</td><td/><td>430201554</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>1503856781</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>1503856781</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>1503856781</td></row>
@@ -3747,8 +3760,10 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>1503856781</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>1503856781</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>1503856781</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>https://www.compliashield.com</td><td>0</td><td/><td>824452463</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>https://compliashield.com</td><td>0</td><td/><td>430187538</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>CompliaShield</td><td>0</td><td/><td>824481294</td></row>
+		<row><td>ID_STRING3</td><td>1033</td><td>CompliaShield Certificate Issuer</td><td>0</td><td/><td>430236370</td></row>
+		<row><td>ID_STRING4</td><td>1033</td><td>CompliaShield PGP Certificate Issuer</td><td>0</td><td/><td>430238418</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>1503856781</td></row>
 	</table>
 
@@ -3862,8 +3877,10 @@
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
-		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
+		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;VSSolutionFolder&gt;\PgpCertificateIssuer\sun-install.ico</td><td>0</td></row>
+		<row><td>_Built1_7D2B472A37274422B7848610A895CFD1.exe</td><td/><td>&lt;VSSolutionFolder&gt;\PgpCertificateIssuer\sun.ico</td><td>0</td></row>
 		<row><td>_Built_3792CA9089CD4D9AA555CC67C60C7EE2.exe</td><td/><td>&lt;VSSolutionFolder&gt;\JFM.Certificates.IssuerConsole\certificate.ico</td><td>0</td></row>
+		<row><td>_Built_37F16777D5784D29A2AAC83D24FBF2AE.exe</td><td/><td>&lt;VSSolutionFolder&gt;\PgpCertificateIssuer\sun.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -3909,6 +3926,7 @@
 		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
 		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
 		<row><td>ISSelfRegisterFinalize</td><td/><td>6601</td><td/><td/></row>
+		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
@@ -3996,7 +4014,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{97D59E55-E476-435E-BC37-EA421D27C974}</td></row>
 		<row><td>ISUSSignature</td><td>{9CA6FD65-05D6-43D6-9188-D96441FDCD48}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewSetupTypes,viewUpdateService,viewAppV,viewRelease,viewAppFiles,viewUI</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewSetupTypes,viewUpdateService,viewAppV,viewRelease,viewAppFiles,viewUI,viewUpgradePaths,viewProject</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4026,6 +4044,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td/><td>430</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
+		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>InstallWelcome</td><td>Not Installed</td><td>1210</td><td>InstallWelcome</td><td/></row>
 		<row><td>IsolateComponents</td><td/><td>950</td><td>IsolateComponents</td><td/></row>
 		<row><td>LaunchConditions</td><td>Not Installed</td><td>410</td><td>LaunchConditions</td><td/></row>
@@ -4342,7 +4361,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>IS_SQLSERVER_SERVER</td><td/><td/></row>
 		<row><td>IS_SQLSERVER_USERNAME</td><td>sa</td><td/></row>
 		<row><td>InstallChoice</td><td>AR</td><td/></row>
-		<row><td>LAUNCHPROGRAM</td><td>1</td><td/></row>
 		<row><td>LAUNCHPROGRAMCOMPCODE</td><td>{DE7ACF56-9309-40FA-9346-A9A248D493EF}</td><td/></row>
 		<row><td>LAUNCHPROGRAMFILEKEY</td><td>jfm.certificates.issuerconso2</td><td/></row>
 		<row><td>LAUNCHREADME</td><td>1</td><td/></row>
@@ -4373,9 +4391,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]JFM.Certificates.IssuerConsole.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{2E25620C-C5B4-4909-9487-431A80DC2639}</td><td/></row>
+		<row><td>ProductCode</td><td>{5047FC97-7CCA-4AE5-852D-5BB9DC537650}</td><td/></row>
 		<row><td>ProductName</td><td>CompliaShield Certificate Issuer</td><td/></row>
-		<row><td>ProductVersion</td><td>1.4.0.2</td><td/></row>
+		<row><td>ProductVersion</td><td>1.4.0.5</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4387,8 +4405,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SHOWLAUNCHPROGRAM</td><td>-1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION45FULL</td><td/></row>
+		<row><td>SHOWLAUNCHPROGRAM</td><td>0</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION45FULL;ISACTIONPROP1</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{1C4EEBF7-A94B-4789-8141-6233AB4121E9}</td><td/></row>
@@ -4452,6 +4470,10 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
+		<row><td>FileKey1</td><td>CertificateIssuer.Primary_output</td><td/><td>compli_1_compliashield</td><td>2</td></row>
+		<row><td>FileKey2</td><td>CertificateIssuer.Primary_output</td><td/><td>compli_1_compliashield_certificate_issuer</td><td>2</td></row>
+		<row><td>_Built</td><td>CertificateIssuer.Primary_output</td><td/><td>compli_1_compliashield_certificate_issuer</td><td>2</td></row>
+		<row><td>_Built1</td><td>PgpCertificateIssuer.Primary_output</td><td/><td>compli_1_compliashield_certificate_issuer</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4537,6 +4559,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>_Built</td><td>compli_1_compliashield_certificate_issuer</td><td>##IDS_SHORTCUT_DISPLAY_NAME3##</td><td>CertificateIssuer.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td>_Built_37F16777D5784D29A2AAC83D24FBF2AE.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>_Built1</td><td>compli_1_compliashield_certificate_issuer</td><td>##IDS_SHORTCUT_DISPLAY_NAME4##</td><td>PgpCertificateIssuer.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td>_Built1_7D2B472A37274422B7848610A895CFD1.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
@@ -4659,6 +4683,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
+		<row><td>{1C4EEBF7-A94B-4789-8141-6233AB4121E9}</td><td>1.0.0.0</td><td>1.4.0.5</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>NewUpgradeEntry1</td></row>
 	</table>
 
 	<table name="Verb">

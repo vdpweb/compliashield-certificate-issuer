@@ -29,7 +29,7 @@ namespace CompliaShield.CertificateIssuer.ConsoleApp
             Console.WriteLine("Certificate Issuer Console");
             Console.WriteLine("version " + version);
             Console.WriteLine("");
-            Console.WriteLine("(c) 2015-2016 JFM Concepts, LLC. All rights reserved. ");
+            Console.WriteLine("(c) 2016 CompliaShield LLC. All rights reserved. ");
             Console.WriteLine("");
             Console.WriteLine("");
 
