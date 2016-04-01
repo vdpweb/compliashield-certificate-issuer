@@ -110,7 +110,7 @@ namespace CompliaShield.CertificateIssuer.ConsoleApp
             var rnd = new Random();
 
             password = new string(
-                Enumerable.Repeat(chars, 15)
+                Enumerable.Repeat(chars, 32)
                           .Select(s => s[rnd.Next(s.Length)])
                           .ToArray());
             thumbprint = x509.Thumbprint.ToLower();
@@ -244,11 +244,11 @@ namespace CompliaShield.CertificateIssuer.ConsoleApp
             x509.PrivateKey = rsaKey; // DotNetUtilities.ToRSA(rsaparams);
 
             // Generating Random Numbers
-            var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-()#$%^&@+=!";
+            var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-()#$%^&@+=!{}[]*.,";
             var rnd = new Random();
 
             password = new string(
-                Enumerable.Repeat(chars, 15)
+                Enumerable.Repeat(chars, 32)
                           .Select(s => s[rnd.Next(s.Length)])
                           .ToArray());
             thumbprint = x509.Thumbprint.ToLower();

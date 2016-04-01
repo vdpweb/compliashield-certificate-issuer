@@ -4393,9 +4393,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]JFM.Certificates.IssuerConsole.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{55295FC3-01B9-4D32-9C2E-E0F166C4A0CD}</td><td/></row>
+		<row><td>ProductCode</td><td>{833C67CA-326B-4EE5-8E46-10328347A9D1}</td><td/></row>
 		<row><td>ProductName</td><td>CompliaShield Certificate Issuer</td><td/></row>
-		<row><td>ProductVersion</td><td>1.4.0.6</td><td/></row>
+		<row><td>ProductVersion</td><td>1.4.0.7</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
