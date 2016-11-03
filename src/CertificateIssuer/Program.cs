@@ -83,16 +83,16 @@ namespace CompliaShield.CertificateIssuer.ConsoleApp
             }
 
             bool isCertificateAuthority = false;
-            if (rootX509Certificate2 == null)
+            //if (rootX509Certificate2 == null)
+            //{
+            // create a root
+            Console.Write("Mark as certificate authority? (Y + ENTER for yes) > ");
+            var resp = Console.ReadLine();
+            if (!string.IsNullOrEmpty(resp) && resp.ToLower() == "y")
             {
-                // create a root
-                Console.Write("Mark as certificate authority root certificate? (Y + ENTER for yes) > ");
-                var resp = Console.ReadLine();
-                if (!string.IsNullOrEmpty(resp) && resp.ToLower() == "y")
-                {
-                    isCertificateAuthority = true;
-                }
+                isCertificateAuthority = true;
             }
+            //}
 
             bool includePemPrivateKey = false;
             Console.Write("Include full key PEM text file? [WARNING: Includes PRIVATE key!] (Y + ENTER for yes) > ");
@@ -122,7 +122,7 @@ namespace CompliaShield.CertificateIssuer.ConsoleApp
                 else
                 {
                     // create a signed certificate
-                    CertificateGenerator.GenerateCertificate(cn, serialNumber, expireOnUtc, rootX509Certificate2, out thumbprint, out pemPrivateKey, out pemPublicCert, out cerData, out pkcs12Data, out password);
+                    CertificateGenerator.GenerateCertificate(cn, serialNumber, expireOnUtc, isCertificateAuthority, rootX509Certificate2, out thumbprint, out pemPrivateKey, out pemPublicCert, out cerData, out pkcs12Data, out password);
                 }
 
             }
@@ -389,13 +389,18 @@ namespace CompliaShield.CertificateIssuer.ConsoleApp
             //    return true;
             //}
 
-            Console.Write("Enter thumbprint or path to PFX of issuing root (ENTER to skip) > ");
+            Console.Write("Enter thumbprint or path to PFX of issuing CA (ENTER to skip) > ");
             var path = Console.ReadLine();
             if (string.IsNullOrEmpty(path))
             {
-                Console.WriteLine("No issuing certificate. Certificate will be issues as a root certificate.");
+                Console.WriteLine("No issuing certificate. Certificate will be issued as a root certificate.");
                 rootCertificate = null;
                 return true;
+            }
+
+            if(path.StartsWith("\"") && path.EndsWith("\""))
+            {
+                path = path.Substring(1, path.Length - 2);
             }
 
             if (path.Length == 40 && !path.Contains(@"\") && !path.Contains("/"))
@@ -427,7 +432,7 @@ namespace CompliaShield.CertificateIssuer.ConsoleApp
                     {
                         var bytes = File.ReadAllBytes(fi.FullName);
                         Console.Write("Enter issuing root PFX password (ENTER to skip) > ");
-                        var rootPassword = Console.ReadLine();
+                        var rootPassword = ConsoleHelpers.CommandHelper.ReadPassword();
                         rootCertificate = CertificateGenerator.GetX509Certificate2FromBytes(bytes, rootPassword);
                         if (rootPassword == null || !rootCertificate.HasPrivateKey)
                         {
